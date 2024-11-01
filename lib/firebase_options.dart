@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '792586615267',
     projectId: 'projet2-9d413',
     storageBucket: 'projet2-9d413.appspot.com',
-    iosBundleId: 'com.example.miaged',
+    iosBundleId: 'miaged.fl',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(

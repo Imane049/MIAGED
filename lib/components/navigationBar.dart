@@ -41,19 +41,19 @@ class BottomNavBar extends StatelessWidget {
       case 0:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => ClothingList()),
+          MaterialPageRoute(builder: (context) => const ClothingList()),
         );
         break;
       case 1:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => CartPage()),
+          MaterialPageRoute(builder: (context) => const CartPage()),
         );
         break;
       case 2:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => UserProfile()),
+          MaterialPageRoute(builder: (context) => const UserProfile()),
         );
         break;
     }

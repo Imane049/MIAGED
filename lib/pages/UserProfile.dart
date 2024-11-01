@@ -7,7 +7,6 @@ import '../pages/LoginPage.dart';
 import '../pages/AddClothingItem.dart';
 import 'package:flutter/services.dart';
 import '../components/navigationBar.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 
 class UserProfile extends StatefulWidget {
@@ -241,7 +240,7 @@ class _UserProfileState extends State<UserProfile> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AddClothingItem()),
+            MaterialPageRoute(builder: (context) => const AddClothingItem()),
           );
         },
         label: const Text('Ajouter un vêtement'),

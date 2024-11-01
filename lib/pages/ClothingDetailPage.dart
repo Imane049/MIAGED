@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../handlers/UserProvider.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 class ClothingDetailPage extends StatefulWidget {
   final Map<String, dynamic> clothingItem;

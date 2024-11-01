@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
           Provider.of<UserProvider>(context, listen: false).setUserData(userId, userData);
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => ClothingList()),
+            MaterialPageRoute(builder: (context) => const ClothingList()),
           );
         } else {
           _showErrorDialog("Incorrect password! Retry again");

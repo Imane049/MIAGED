@@ -4,21 +4,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'handlers/UserProvider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'firebase_options.dart'; // Importez le fichier firebase_options.dart généré
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  // (
-  //   options: const FirebaseOptions(
-  //     apiKey: "AIzaSyAxRPVxoj9WemyZoau4P03dGIjiCooFnLE",
-  // authDomain: "projet2-9d413.firebaseapp.com",
-  // projectId: "projet2-9d413",
-  // storageBucket: "projet2-9d413.appspot.com",
-  // messagingSenderId: "792586615267",
-  // appId: "1:792586615267:web:7b79987991d39cbb81c8d6",
-  // measurementId: "G-Z9181NFDWS"
-  //   ),
-  // );
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform, // Utilisation des options Firebase pour chaque plateforme
+  );
 
   runApp(
     MultiProvider(
@@ -33,7 +25,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
 
-        // Define the default brightness and colors.
+        // Définir la luminosité par défaut et les couleurs.
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromARGB(255, 255, 28, 138),
           brightness: Brightness.light,
