@@ -8,7 +8,7 @@ Ce projet présente une application mobile pour une boutique de vêtements, perm
 1. [User Stories](#user-stories)
 2. [Vidéos de Démo](#videos-de-demo)
 3. [Utilisateurs de Test](#utilisateurs-de-test)
-4. [Installation et Configuration](#installation-et-configuration)
+
 
 ---
 
