@@ -1,5 +1,4 @@
 
-https://github.com/user-attachments/assets/d65b90b8-ccb5-4acb-986c-899152ee325e
 # Démo de l'application - Boutique de vêtements
 
 Ce projet présente une application mobile pour une boutique de vêtements, permettant aux utilisateurs de parcourir les articles, voir les détails, ajouter des articles au panier, gérer leur profil, et plus encore. L'application suit les méthodologies agiles, et chaque fonctionnalité est définie par une user story. Vous trouverez ci-dessous les vidéos de démonstration pour chaque user story, ainsi que les identifiants de connexion pour tester l'application.
@@ -53,7 +52,9 @@ https://github.com/user-attachments/assets/ec61276a-340b-4253-b345-07b1bc781006
 
 
 https://github.com/user-attachments/assets/5373af4f-36de-4f6d-8b4e-ff61626912a9
+8. **Démo complète** :Démo complète avec switch entre utilisateurs.
 
+https://github.com/user-attachments/assets/d65b90b8-ccb5-4acb-986c-899152ee325e
 
 
 ## Utilisateurs de Test
