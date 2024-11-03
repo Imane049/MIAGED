@@ -75,4 +75,15 @@ Pour les tests, vous pouvez utiliser les comptes suivants :
 
 L'application utilise un modèle de reconnaissance d'image avec **TensorFlow Lite (TFLite)** pour classifier les vêtements, avec une précision de **0.6** (60%). Notez que TFLite n'est **pas compatible avec le web**, il est donc préférable d'utiliser un appareil physique Android ou un émulateur Android pour garantir le bon fonctionnement de l'application. Vous pouvez tester les performances du modèle en utilisant les images disponibles dans le dossier **testModel** de ce dépôt.
 
+## Installation et Configuration
+
+Vous avez deux options pour installer et utiliser l'application :
+
+### Option 1 : Cloner le dépôt GitHub et construire l'application
+Vous pouvez cloner ce dépôt GitHub et construire l'application vous-même pour tester toutes les fonctionnalités en local.
+
+### Option 2 : Télécharger le fichier APK
+Si vous souhaitez simplement tester l'application, vous pouvez télécharger directement le fichier APK en cliquant sur ce lien : [Télécharger l'APK](https://drive.google.com/file/d/1AgUFQWUhEb6xnIHlB0d04WkvEeY9kTeG/view?usp=sharing). Transférez ensuite ce fichier sur votre appareil Android pour l'installer et le tester.
+
+
 
