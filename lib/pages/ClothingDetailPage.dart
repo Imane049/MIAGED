@@ -25,6 +25,7 @@ class _ClothingDetailPageState extends State<ClothingDetailPage> {
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
+          
           onPressed: () {
             Navigator.pop(context);
           },
@@ -35,7 +36,8 @@ class _ClothingDetailPageState extends State<ClothingDetailPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Product Image
+                        const SizedBox(height: 20),
+
             Center(
               child: Container(
                 height: 250,
@@ -48,30 +50,30 @@ class _ClothingDetailPageState extends State<ClothingDetailPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
 
             // Product Title
             Text(
               clothingItem['title'],
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 14),
 
             // Product Brand and Category
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  clothingItem['brand'],
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.grey),
+                  "Marque: " + clothingItem['brand'],
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: const Color.fromARGB(255, 57, 56, 56)),
                 ),
                 Text(
-                  'Category: ${clothingItem['category'] ?? 'Unknown'}',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.grey),
+                  'Categorie: ${clothingItem['category'] ?? 'Unknown'}',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: const Color.fromARGB(255, 57, 56, 56)),
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
 
             // Product Price
             Text(
@@ -107,6 +109,21 @@ class _ClothingDetailPageState extends State<ClothingDetailPage> {
                 ),
               ),
             ),
+                        const SizedBox(height: 16),
+
+            Center( child :TextButton(
+  onPressed: () {
+    Navigator.pop(context);
+  },
+  child:  Text(
+    "Retour",
+    style: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color:  Theme.of(context).colorScheme.primary 
+    ),
+  ),)
+),
           ],
         ),
       ),

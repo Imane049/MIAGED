@@ -1,4 +1,0 @@
-0 Veste
-1 T-shirt
-2 Pantalon
-3 Chaussures

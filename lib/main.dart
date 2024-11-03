@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'pages/LoginPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:tp2/pages/LoginPage.dart';
 import 'handlers/UserProvider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'firebase_options.dart'; // Importez le fichier firebase_options.dart généré
-
+import 'firebase_options.dart'; 
+import 'pages/test.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform, // Utilisation des options Firebase pour chaque plateforme
+    options: DefaultFirebaseOptions.currentPlatform, 
   );
+
 
   runApp(
     MultiProvider(
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
 
         // Définir la luminosité par défaut et les couleurs.
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 255, 28, 138),
+          seedColor: const Color.fromARGB(249, 2, 6, 33),
           brightness: Brightness.light,
         ),
 
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
           displaySmall: GoogleFonts.pacifico(),
         ),
       ),
-      home: const LoginPage(),
+      home: LoginPage (),
     );
   }
 }

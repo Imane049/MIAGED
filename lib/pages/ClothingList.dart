@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/navigationBar.dart';
 import '../components/clothingItem.dart';
 import '../handlers/ClothingService.dart';
+import 'dart:ui';
 
 class ClothingList extends StatefulWidget {
   const ClothingList({super.key});
@@ -11,7 +12,6 @@ class ClothingList extends StatefulWidget {
 }
 
 class _ClothingListState extends State<ClothingList> {
-  String selectedBrand = "All Brands"; // Default selection for the dropdown
   final List<Map<String, dynamic>> clothingItems = []; // List to store fetched items
   bool _isLoading = true; // To track loading state
 
@@ -40,43 +40,76 @@ class _ClothingListState extends State<ClothingList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.surface,
-        elevation: 0,
-        title: Text(
-          'Clothing List',
-          style: Theme.of(context).textTheme.titleLarge,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Theme.of(context).colorScheme.primary.withOpacity(0.8),
+              Theme.of(context).colorScheme.primary,
+              Theme.of(context).colorScheme.primary.withOpacity(0.8),
+            ],
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              // Header with title
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: Text(
+                  'Acheter',
+                  style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1.5,
+                      ),
+                ),
+              ),
+              // Main content area with loading or grid view
+              Expanded(
+                child: _isLoading
+                    ? const Center(
+                        child: CircularProgressIndicator(color: Colors.white),
+                      )
+                    : Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.7),
+                          borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
+                        ),
+                        padding: const EdgeInsets.all(16.0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(25),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                            child: GridView.builder(
+                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                childAspectRatio: 0.75,
+                                crossAxisSpacing: 16,
+                                mainAxisSpacing: 16,
+                              ),
+                              itemCount: clothingItems.length,
+                              itemBuilder: (context, index) {
+                                final clothingItem = clothingItems[index];
+
+                                // Filter items based on selected brand
+                               
+                                return ClothingItemCard(clothingItem: clothingItem);
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+              ),
+            ],
+          ),
         ),
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 0.7,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                ),
-                itemCount: clothingItems.length,
-                itemBuilder: (context, index) {
-                  final clothingItem = clothingItems[index];
-
-                  // Filter items based on selected brand
-                  if (selectedBrand != "All Brands" && clothingItem['brand'] != selectedBrand) {
-                    return Container(); // Skip items not matching the selected brand
-                  }
-
-                  return ClothingItemCard(clothingItem: clothingItem);
-                },
-              ),
-            ),
       bottomNavigationBar: BottomNavBar(
         currentIndex: 0,
-        onTap: (index) {
-          // Handle navigation between tabs here
-        },
+        onTap: (index) {        },
       ),
     );
   }

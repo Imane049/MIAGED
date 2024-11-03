@@ -1,4 +1,4 @@
-package com.example.miaged
+package miaged.fl
 
 import io.flutter.embedding.android.FlutterActivity
 
